@@ -37,3 +37,22 @@ if __name__ == '__main__':
     for item in siblings:
         print(item)
 
+
+
+#TAMBAHAN 
+from kanren.facts import Relation, facts
+from kanren.core import var, run
+parent = Relation()
+facts(parent, ("Slamet", "Amin"),
+("Slamet", "Anang"),
+("Amin", "Badu"),
+("Amin", "Budi"),
+("Anang", "Didi"),
+("Anang", "Dadi"))
+x = var()
+child = "Amin"
+ayah = run(2, x, parent(child, x))
+print("\nNama ayah " + child + ": ")
+for item in ayah:
+    print(item)
+
